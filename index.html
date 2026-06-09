@@ -43,7 +43,7 @@ body {
 .cover {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 5fr 7fr;
   overflow: hidden;
 }
 .cover-left {
@@ -55,7 +55,7 @@ body {
   overflow: hidden;
 }
 .cover-left .cover-logo { flex-shrink: 0; }
-.cover-left .cover-content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 2rem 0; }
+.cover-left .cover-content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0.5rem 0; }
 .cover-left .cover-footer { flex-shrink: 0; }
 .cover-left::before {
   content: '';
@@ -74,18 +74,18 @@ body {
 }
 .cover-badge {
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
-  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 2rem;
+  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem;
 }
 .cover-title {
-  font-size: 2.8rem; font-weight: 800; color: var(--white);
-  line-height: 1.15; margin-bottom: 0; letter-spacing: -0.02em;
+  font-size: 3.2rem; font-weight: 800; color: var(--white);
+  line-height: 1.1; margin-bottom: 0; letter-spacing: -0.02em;
 }
 .cover-title span {
   display: block; font-weight: 300; font-size: 0.95rem;
   letter-spacing: 0.08em; text-transform: uppercase;
   margin-top: 1.25rem; color: rgba(255,255,255,0.5);
 }
-.cover-divider { width: 40px; height: 2px; background: rgba(255,255,255,0.3); margin: 0 0 1rem 0; }
+.cover-divider { width: 64px; height: 3px; background: rgba(255,255,255,0.35); margin: 0 0 1rem 0; }
 .cover-client { font-size: 1.2rem; font-weight: 500; color: var(--white); }
 .cover-url { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
 .cover-right {
@@ -94,8 +94,8 @@ body {
   justify-content: center; align-items: stretch;
   gap: 1rem; min-width: 0;
 }
-.cover-right > .summary-card { width: 100%; max-width: 560px; align-self: center; }
-.cover-right .summary-card { padding: 1.25rem 1.4rem; }
+.cover-right > .summary-card { width: 100%; }
+.cover-right .summary-card { padding: 1.25rem 1.5rem; }
 .cover-right .summary-card h3 { margin-bottom: 0.85rem; }
 
 .audit-grid {
@@ -333,69 +333,139 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
   <div class="cover-left">
     <div class="cover-logo"><div class="amg-logo" style="width:180px;height:48px"></div></div>
     <div class="cover-content">
-      <div class="cover-badge">Confidential · Prepared for Magnus Technologies</div>
+      <div class="cover-badge">Prepared for Ian Byrd &middot; VP Sales</div>
       <h1 class="cover-title">
         Digital Health &amp;<br>Performance<br>Assessment
-        <span>Gap Analysis + Recommended Solution</span>
+        <span>Gap Analysis &middot; Recommended Solution</span>
       </h1>
     </div>
     <div class="cover-footer">
       <div class="cover-divider"></div>
       <div class="cover-client">Magnus Technologies</div>
       <div class="cover-url">magnustech.com &middot; TMS Software &middot; Austin, TX</div>
+      <div style="font-size:0.72rem;color:rgba(255,255,255,0.25);margin-top:0.75rem;letter-spacing:0.04em">June 2026 &middot; Confidential</div>
     </div>
   </div>
   <div class="cover-right">
+
+    <!-- CARD 1: AUDIT SUMMARY — 6 mini metric blocks with color-coded top borders -->
     <div class="summary-card">
       <h3>Audit Summary</h3>
-      <div class="audit-grid">
-        <span class="ag-label">Site Health:</span>
-        <span class="ag-value warn">55% <span style="font-size:0.7rem;color:var(--muted)">(Est.)</span></span>
-        <span class="ag-label">Authority Score:</span>
-        <span class="ag-value accent">22 <span style="font-size:0.7rem;color:var(--muted)">(Est.)</span></span>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem">
 
-        <span class="ag-label">Keywords:</span>
-        <span class="ag-value">283 <span style="color:var(--green);font-size:0.75rem">&uarr;4%</span></span>
-        <span class="ag-label">Branded Traffic:</span>
-        <span class="ag-value accent">86%</span>
+        <div style="border-top:3px solid var(--amber);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Site Health</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--amber);line-height:1">55%</div>
+          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">Est.</div>
+        </div>
 
-        <span class="ag-label">Organic Traffic:</span>
-        <span class="ag-value warn">1,000<span style="font-size:0.72rem;color:var(--muted)">/mo</span></span>
-        <span class="ag-label">AI Visibility:</span>
-        <span class="ag-value accent">29<span style="font-size:0.72rem;color:var(--muted)">/100</span></span>
+        <div style="border-top:3px solid var(--red);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Authority Score</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--red);line-height:1">22</div>
+          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">Est.</div>
+        </div>
+
+        <div style="border-top:3px solid var(--text);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Keywords</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--text);line-height:1">283</div>
+          <div style="font-size:0.6rem;color:var(--green);font-weight:700;margin-top:0.1rem">&uarr; 4% MoM</div>
+        </div>
+
+        <div style="border-top:3px solid var(--red);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Branded Traffic</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--red);line-height:1">86%</div>
+          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">of all organic visits</div>
+        </div>
+
+        <div style="border-top:3px solid var(--amber);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Organic Traffic</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--amber);line-height:1">1,000</div>
+          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">visits / month</div>
+        </div>
+
+        <div style="border-top:3px solid var(--red);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">AI Visibility</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--red);line-height:1">29<span style="font-size:0.7rem;font-weight:600;color:var(--muted)">/100</span></div>
+          <div style="font-size:0.6rem;color:var(--red);font-weight:600;margin-top:0.1rem">Low</div>
+        </div>
+
       </div>
     </div>
 
+    <!-- CARD 2: BIGGEST OPPORTUNITIES — severity-striped left borders -->
     <div class="summary-card">
       <h3>Biggest Opportunities</h3>
-      <ul class="opportunity-list">
-        <li>86% branded traffic &mdash; only 146 non-branded visitors reach the site each month</li>
-        <li>Zero organic rankings for any TMS buying keyword (&ldquo;transportation management software&rdquo; = 5,400 searches/mo)</li>
-        <li>AI Visibility 29/100 &mdash; ChatGPT and Gemini actively confuse Magnus with unrelated companies</li>
-        <li>20+ directory listings absent; Cylex shows a wrong address (old location)</li>
-      </ul>
+      <div style="display:flex;flex-direction:column;gap:0.45rem">
+
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;padding:0.5rem 0.6rem;background:var(--red-light);border-radius:6px;border-left:3px solid var(--red)">
+          <div style="flex-shrink:0;margin-top:0.1rem;width:42px;text-align:center">
+            <span style="font-size:0.55rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);background:rgba(196,30,30,0.12);padding:0.1rem 0.35rem;border-radius:3px">Critical</span>
+          </div>
+          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">86% branded traffic &mdash; only <strong>146 non-branded visitors</strong> reach the site each month</div>
+        </div>
+
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;padding:0.5rem 0.6rem;background:var(--red-light);border-radius:6px;border-left:3px solid var(--red)">
+          <div style="flex-shrink:0;margin-top:0.1rem;width:42px;text-align:center">
+            <span style="font-size:0.55rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);background:rgba(196,30,30,0.12);padding:0.1rem 0.35rem;border-radius:3px">Critical</span>
+          </div>
+          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">Zero rankings for any TMS buying keyword &mdash; <strong>&ldquo;transportation management software&rdquo;</strong> = 5,400 searches/mo</div>
+        </div>
+
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;padding:0.5rem 0.6rem;background:var(--amber-light);border-radius:6px;border-left:3px solid var(--amber)">
+          <div style="flex-shrink:0;margin-top:0.1rem;width:42px;text-align:center">
+            <span style="font-size:0.55rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);background:rgba(212,146,10,0.12);padding:0.1rem 0.35rem;border-radius:3px">High</span>
+          </div>
+          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">AI Visibility 29/100 &mdash; ChatGPT &amp; Gemini <strong>confuse Magnus</strong> with unrelated companies</div>
+        </div>
+
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;padding:0.5rem 0.6rem;background:var(--amber-light);border-radius:6px;border-left:3px solid var(--amber)">
+          <div style="flex-shrink:0;margin-top:0.1rem;width:42px;text-align:center">
+            <span style="font-size:0.55rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);background:rgba(212,146,10,0.12);padding:0.1rem 0.35rem;border-radius:3px">High</span>
+          </div>
+          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">20+ directory listings absent; <strong>Cylex shows wrong address</strong> (old location)</div>
+        </div>
+
+      </div>
     </div>
 
+    <!-- CARD 3: TRAFFIC BREAKDOWN — full-width stacked bar with hero number -->
     <div class="summary-card">
       <h3>Traffic Breakdown</h3>
-      <div class="comp-body">
-        <!-- Branded 86.02%, Non-branded 13.98%
-             r=15.9155, circumference=100
-             Branded mid at 43%: x=14*sin(154.84°)=5.95, y=-14*cos(154.84°)=12.67 -->
-        <svg class="comp-pie" viewBox="-25 -25 50 50" aria-label="Branded vs non-branded traffic">
-          <circle r="15.9155" fill="#fff"></circle>
-          <g transform="rotate(-90)" fill="none" stroke-width="31.831">
-            <circle r="15.9155" stroke="#7B1818" stroke-dasharray="86.02 13.98" stroke-dashoffset="0"></circle>
-            <circle r="15.9155" stroke="#C41E1E" stroke-dasharray="13.98 86.02" stroke-dashoffset="-86.02"></circle>
-          </g>
-          <text class="pie-label" x="5.95" y="12.67">86%</text>
-        </svg>
-        <div class="comp-legend">
-          <span class="cl-name" style="color:var(--maroon)">Branded Traffic</span><span class="cl-pct">898 &middot; 86%</span>
-          <span class="cl-name" style="color:var(--red)">Non-Branded <span style="font-size:0.7rem;font-weight:600">&darr;1%</span></span><span class="cl-pct">146 &middot; 14%</span>
+      <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:0.85rem">
+        <div style="text-align:center;flex-shrink:0">
+          <div style="font-size:2.6rem;font-weight:900;color:var(--red);line-height:1;letter-spacing:-0.03em">86%</div>
+          <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:0.1rem">Branded</div>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:0.75rem;color:var(--text);line-height:1.5">Only <strong style="color:var(--red)">146 visitors/mo</strong> found Magnus without already knowing the name.</div>
+        </div>
+      </div>
+
+      <!-- Full-width stacked bar -->
+      <div style="height:22px;border-radius:4px;overflow:hidden;display:flex;margin-bottom:0.65rem">
+        <div style="width:86.02%;background:var(--maroon);display:flex;align-items:center;justify-content:flex-end;padding-right:0.5rem">
+          <span style="font-size:0.62rem;font-weight:800;color:rgba(255,255,255,0.85)">898</span>
+        </div>
+        <div style="width:13.98%;background:var(--red);display:flex;align-items:center;justify-content:center">
+          <span style="font-size:0.62rem;font-weight:800;color:rgba(255,255,255,0.85)">146</span>
+        </div>
+      </div>
+
+      <!-- Legend row -->
+      <div style="display:flex;justify-content:space-between;font-size:0.72rem">
+        <div style="display:flex;align-items:center;gap:0.35rem">
+          <div style="width:8px;height:8px;border-radius:2px;background:var(--maroon);flex-shrink:0"></div>
+          <span style="color:var(--text);font-weight:600">Branded</span>
+          <span style="color:var(--muted)">86%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.35rem">
+          <div style="width:8px;height:8px;border-radius:2px;background:var(--red);flex-shrink:0"></div>
+          <span style="color:var(--text);font-weight:600">Non-Branded</span>
+          <span style="color:var(--red);font-weight:700">&darr;1% &middot; 14%</span>
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
