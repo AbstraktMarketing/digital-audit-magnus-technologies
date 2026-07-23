@@ -11,6 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
+  /* Pipeline Inbound palette */
+  --navy: #13305C;
+  --navy-dark: #0E2245;
+  --navy-light: #294E86;
+  --coral: #FF5A3C;
+  --aqua: #2BD4C4;
+  --off-white: #F6F7FA;
+  /* Legacy / body palette */
   --maroon: #7B1818;
   --maroon-dark: #5A1010;
   --maroon-light: #A83030;
@@ -21,10 +29,10 @@
   --muted: #8A8A8A;
   --light-gray: #F0EDEA;
   --border: #E5E0DB;
-  --green: #1B7A3D;
-  --green-light: #E8F5E9;
-  --red: #C41E1E;
-  --red-light: #FFEBEE;
+  --green: #0B857B;
+  --green-light: #E4F8F6;
+  --red: #D43A1E;
+  --red-light: #FDEEEA;
   --amber: #D4920A;
   --amber-light: #FFF8E1;
   --blue: #1557B0;
@@ -47,7 +55,7 @@ body {
   overflow: hidden;
 }
 .cover-left {
-  background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
@@ -60,10 +68,26 @@ body {
 .cover-left::before {
   content: '';
   position: absolute;
-  top: -20%; right: -30%;
-  width: 80%; height: 80%;
-  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  top: -90px; right: -90px;
+  width: 320px; height: 320px;
   border-radius: 50%;
+  border: 1px solid rgba(255,90,60,0.42);
+  opacity: 0.5;
+}
+.cover-left .ring-aqua {
+  position: absolute;
+  top: -30px; right: 20px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(43,212,196,0.45);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.platform-tags { display: flex; gap: 0.4rem; margin-top: 0.9rem; flex-wrap: wrap; }
+.platform-tag {
+  font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.7rem;
+  border-radius: 20px; border: 1px solid rgba(255,90,60,0.42);
+  color: var(--coral); letter-spacing: 0.05em;
 }
 .cover-left::after {
   content: '';
@@ -331,44 +355,53 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
 <!-- ===== COVER ===== -->
 <div class="cover">
   <div class="cover-left">
-    <div class="cover-logo"><div class="amg-logo" style="width:180px;height:48px"></div></div>
+    <div class="ring-aqua"></div>
+    <div class="cover-logo">
+      <div class="amg-logo" style="width:230px;height:29px"></div>
+    </div>
     <div class="cover-content">
-      <div class="cover-badge">Prepared for Ian Byrd &middot; VP Sales</div>
+      <div class="cover-badge">Prepared for Sara &amp; John &middot; Magnus Technologies</div>
       <h1 class="cover-title">
-        Digital Health &amp;<br>Performance<br>Assessment
-        <span>Gap Analysis &middot; Recommended Solution</span>
+        Digital Health &amp;<br>Performance<br><span style="display:inline;font-weight:800;font-size:inherit;letter-spacing:inherit;text-transform:none;margin:0;color:var(--coral)">Assessment</span>
+        <span>Post-Remediation Update &middot; Ongoing Program</span>
       </h1>
     </div>
     <div class="cover-footer">
       <div class="cover-divider"></div>
       <div class="cover-client">Magnus Technologies</div>
       <div class="cover-url">magnustech.com &middot; TMS Software &middot; Austin, TX</div>
-      <div style="font-size:0.72rem;color:rgba(255,255,255,0.25);margin-top:0.75rem;letter-spacing:0.04em">June 2026 &middot; Confidential</div>
+      <div class="platform-tags">
+        <div class="platform-tag">Google</div>
+        <div class="platform-tag">AI Overviews</div>
+        <div class="platform-tag">ChatGPT</div>
+        <div class="platform-tag">Perplexity</div>
+        <div class="platform-tag">Voice</div>
+      </div>
+      <div style="font-size:0.72rem;color:rgba(255,255,255,0.25);margin-top:0.75rem;letter-spacing:0.04em">July 2026 &middot; Updated Post-Remediation</div>
     </div>
   </div>
   <div class="cover-right">
 
-    <!-- CARD 1: AUDIT SUMMARY — 6 mini metric blocks with color-coded top borders -->
     <div class="summary-card">
       <h3>Audit Summary</h3>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem">
 
-        <div style="border-top:3px solid var(--amber);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+        <div style="border-top:3px solid var(--green);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
           <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Site Health</div>
-          <div style="font-size:1.15rem;font-weight:900;color:var(--amber);line-height:1">55%</div>
-          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">Est.</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--green);line-height:1">85%</div>
+          <div style="font-size:0.6rem;color:var(--green);font-weight:700;margin-top:0.1rem">&#8593; from 74%</div>
         </div>
 
-        <div style="border-top:3px solid var(--red);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
+        <div style="border-top:3px solid var(--amber);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
           <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Authority Score</div>
-          <div style="font-size:1.15rem;font-weight:900;color:var(--red);line-height:1">22</div>
-          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">Est.</div>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--amber);line-height:1">24</div>
+          <div style="font-size:0.6rem;color:var(--muted);margin-top:0.1rem">Semrush</div>
         </div>
 
         <div style="border-top:3px solid var(--text);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
           <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Keywords</div>
           <div style="font-size:1.15rem;font-weight:900;color:var(--text);line-height:1">283</div>
-          <div style="font-size:0.6rem;color:var(--green);font-weight:700;margin-top:0.1rem">&uarr; 4% MoM</div>
+          <div style="font-size:0.6rem;color:var(--green);font-weight:700;margin-top:0.1rem">&#8593; +4% MoM</div>
         </div>
 
         <div style="border-top:3px solid var(--red);border-radius:0 0 6px 6px;background:var(--light-gray);padding:0.6rem 0.65rem">
@@ -392,69 +425,44 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
       </div>
     </div>
 
-    <!-- CARD 2: BIGGEST OPPORTUNITIES — stacked severity label above text -->
     <div class="summary-card">
       <h3>Biggest Opportunities</h3>
-      <div style="display:flex;flex-direction:column;gap:0.45rem">
-
-        <div style="padding:0.65rem 0.85rem;background:var(--red-light);border-radius:6px;border-left:3px solid var(--red)">
-          <div style="font-size:0.55rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:0.3rem">Critical</div>
-          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">86% branded traffic &mdash; only <strong>146 non-branded visitors</strong> reach the site each month</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem">
+        <div style="background:var(--green-light);border-left:3px solid var(--green);border-radius:0 6px 6px 0;padding:0.65rem 0.85rem">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:0.25rem">Completed</div>
+          <div style="font-size:0.82rem;color:var(--text)"><strong>Technical remediation done</strong> &mdash; site health 74% &rarr; 85%, 131 broken links cleared, redirect table corrected, PHP 8.0 updated.</div>
         </div>
-
-        <div style="padding:0.65rem 0.85rem;background:var(--red-light);border-radius:6px;border-left:3px solid var(--red)">
-          <div style="font-size:0.55rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:0.3rem">Critical</div>
-          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">Zero rankings for any TMS buying keyword &mdash; <strong>&ldquo;transportation management software&rdquo;</strong> = 5,400 searches/mo</div>
+        <div style="background:var(--red-light);border-left:3px solid var(--red);border-radius:0 6px 6px 0;padding:0.65rem 0.85rem">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:0.25rem">Critical</div>
+          <div style="font-size:0.82rem;color:var(--text)"><strong>86% branded traffic &mdash; only 146 non-branded visitors/month.</strong> Zero organic rankings for TMS buying terms. &ldquo;Transportation management software&rdquo; = 5,400 searches/mo.</div>
         </div>
-
-        <div style="padding:0.65rem 0.85rem;background:var(--amber-light);border-radius:6px;border-left:3px solid var(--amber)">
-          <div style="font-size:0.55rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.3rem">High</div>
-          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">AI Visibility 29/100 &mdash; ChatGPT &amp; Gemini <strong>confuse Magnus</strong> with unrelated companies</div>
+        <div style="background:var(--amber-light);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:0.65rem 0.85rem">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.25rem">High</div>
+          <div style="font-size:0.82rem;color:var(--text)"><strong>AI Visibility 29/100</strong> &mdash; ChatGPT &amp; Gemini confuse Magnus with unrelated companies.</div>
         </div>
-
-        <div style="padding:0.65rem 0.85rem;background:var(--amber-light);border-radius:6px;border-left:3px solid var(--amber)">
-          <div style="font-size:0.55rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.3rem">High</div>
-          <div style="font-size:0.79rem;color:var(--text);line-height:1.45">20+ directory listings absent; <strong>Cylex shows wrong address</strong> (old location)</div>
+        <div style="background:var(--amber-light);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:0.65rem 0.85rem">
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.25rem">High</div>
+          <div style="font-size:0.82rem;color:var(--text)">On-page gaps remain: <strong>37 pages missing meta descriptions</strong>, 108 images without alt text, 23 pages with multiple H1 tags.</div>
         </div>
-
       </div>
     </div>
 
-    <!-- CARD 3: TRAFFIC BREAKDOWN — full-width stacked bar with hero number -->
     <div class="summary-card">
       <h3>Traffic Breakdown</h3>
-      <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:0.85rem">
-        <div style="text-align:center;flex-shrink:0">
-          <div style="font-size:2.6rem;font-weight:900;color:var(--red);line-height:1;letter-spacing:-0.03em">86%</div>
-          <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:0.1rem">Branded</div>
-        </div>
-        <div style="flex:1;min-width:0">
-          <div style="font-size:0.75rem;color:var(--text);line-height:1.5">Only <strong style="color:var(--red)">146 visitors/mo</strong> found Magnus without already knowing the name.</div>
-        </div>
+      <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.65rem">
+        <div style="font-size:2.8rem;font-weight:900;color:var(--red);line-height:1;letter-spacing:-0.03em">86%</div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.4">of organic traffic<br>is branded search</div>
       </div>
-
-      <!-- Full-width stacked bar -->
-      <div style="height:22px;border-radius:4px;overflow:hidden;display:flex;margin-bottom:0.65rem">
-        <div style="width:86.02%;background:var(--maroon);display:flex;align-items:center;justify-content:flex-end;padding-right:0.5rem">
-          <span style="font-size:0.62rem;font-weight:800;color:rgba(255,255,255,0.85)">898</span>
-        </div>
-        <div style="width:13.98%;background:var(--red);display:flex;align-items:center;justify-content:center">
-          <span style="font-size:0.62rem;font-weight:800;color:rgba(255,255,255,0.85)">146</span>
-        </div>
+      <div style="height:18px;border-radius:4px;overflow:hidden;display:flex;margin-bottom:0.6rem">
+        <div style="width:86%;background:var(--navy);display:flex;align-items:center;padding-left:0.5rem"><span style="font-size:0.58rem;font-weight:700;color:#fff;white-space:nowrap">Branded &nbsp;898</span></div>
+        <div style="width:14%;background:var(--red);display:flex;align-items:center;justify-content:flex-end;padding-right:0.35rem"><span style="font-size:0.58rem;font-weight:700;color:#fff;white-space:nowrap">146</span></div>
       </div>
-
-      <!-- Legend row -->
-      <div style="display:flex;justify-content:space-between;font-size:0.72rem">
-        <div style="display:flex;align-items:center;gap:0.35rem">
-          <div style="width:8px;height:8px;border-radius:2px;background:var(--maroon);flex-shrink:0"></div>
-          <span style="color:var(--text);font-weight:600">Branded</span>
-          <span style="color:var(--muted)">86%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.35rem">
-          <div style="width:8px;height:8px;border-radius:2px;background:var(--red);flex-shrink:0"></div>
-          <span style="color:var(--text);font-weight:600">Non-Branded</span>
-          <span style="color:var(--red);font-weight:700">&darr;1% &middot; 14%</span>
-        </div>
+      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.75rem">Only <strong style="color:var(--text)">146 visitors/month</strong> found Magnus without already knowing the name.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;font-size:0.76rem">
+        <div><span style="color:var(--muted)">Total monthly visits:</span> <strong style="color:var(--text)">~1,000</strong></div>
+        <div><span style="color:var(--muted)">Non-branded:</span> <strong style="color:var(--red)">146 (14%)</strong></div>
+        <div><span style="color:var(--muted)">Organic keywords:</span> <strong style="color:var(--text)">283</strong></div>
+        <div><span style="color:var(--muted)">MoM trend:</span> <strong style="color:var(--green)">&#8593; +4%</strong></div>
       </div>
     </div>
 
@@ -464,98 +472,31 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
 <div class="full-divider"></div>
 
 <!-- ===== ABSTRAKT CREDIBILITY BAR ===== -->
-<div style="background:linear-gradient(135deg,#111111 0%,#1A1A1A 60%,#1f1f1f 100%);border-top:3px solid var(--maroon);padding:0 3rem">
-  <div style="max-width:1300px;margin:0 auto;display:flex;align-items:stretch">
-
-    <!-- Inbound SDR logo anchor -->
-    <div style="display:flex;align-items:center;padding:1.6rem 2.5rem 1.6rem 0;border-right:1px solid rgba(255,255,255,0.08);flex-shrink:0">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 334.9 63.9" style="width:170px;height:32px;display:block">
-        <defs><style>.ib-cls-1{fill:none}.ib-cls-2{fill:#fff}.ib-cls-3{fill:#a21d21}</style></defs>
-        <g>
-          <g>
-            <g>
-              <path class="ib-cls-3" d="M247,39.4c-5.6,0-11.3-2-15.7-5.9l4.8-5.8c3.3,2.8,6.8,4.5,11.1,4.5,3.3,0,5.3-1.3,5.3-3.5v-.1c0-2.1-1.3-3.1-7.4-4.7-7.4-1.9-12.3-4-12.3-11.3v-.1c0-6.7,5.4-11.1,12.9-11.1,5.4,0,10,1.7,13.7,4.7l-4.2,6.1c-3.3-2.3-6.5-3.6-9.6-3.6s-4.8,1.4-4.8,3.2v.1c0,2.4,1.6,3.2,8,4.9,7.5,2,11.7,4.6,11.7,11.1v.1c.1,7.3-5.5,11.4-13.5,11.4z"/>
-              <path class="ib-cls-3" d="M279.1,38.9h-14.4V1.9h14.4c11.6,0,19.7,8,19.7,18.4v.1c0,10.4-8.1,18.5-19.7,18.5zM290.3,20.4c0-6.6-4.5-11.1-11.1-11.1h-6.3v22.3h6.3c6.6,0,11.1-4.5,11.1-11.2z"/>
-              <path class="ib-cls-3" d="M325.3,38.9l-7.9-11.8h-6.4v11.8h-8.1V1.9h16.9c8.7,0,14,4.6,14,12.2v.1c0,6-3.2,9.7-7.9,11.5l9,13.2h-9.6zM325.5,14.5c0-3.5-2.4-5.3-6.4-5.3h-8.1v10.6h8.2c4,0,6.2-2.1,6.2-5.2v-.1z"/>
-            </g>
-            <g>
-              <path class="ib-cls-2" d="M0,50h4.4c4.3,0,7.3,3,7.3,6.8h0c0,3.8-3,6.8-7.2,6.8H0v-13.6zM4.5,63c3.9,0,6.6-2.7,6.6-6.2h0c0-3.5-2.6-6.2-6.6-6.2H.7v12.4h3.8z"/>
-              <path class="ib-cls-2" d="M16.6,50h.7v13.6h-.7v-13.6z"/>
-              <path class="ib-cls-2" d="M22.2,56.8h0c0-3.7,2.6-7.1,6.7-7.1,2.1,0,3.5.6,4.8,1.8l-.3.5c-1.2-1-2.4-1.7-4.4-1.7-3.6,0-6,3.1-6,6.4h0c0,3.5,2.3,6.5,6.1,6.5,1.9,0,3.6-.8,4.7-1.8v-4.2h-4.9v-.6h5.5v5.1c-1.3,1.2-3.1,2.1-5.3,2.1-4.4.1-6.9-3.1-6.9-7z"/>
-              <path class="ib-cls-2" d="M39.5,50h.7v13.6h-.7v-13.6z"/>
-              <path class="ib-cls-2" d="M49.3,50.6h-4.8v-.6h10.4v.6h-4.9v13h-.7v-13z"/>
-              <path class="ib-cls-2" d="M62.4,49.9h.6l6.5,13.7h-.7l-1.8-4h-8.4l-1.9,4h-.7l6.4-13.7zM66.6,59l-3.9-8.4-3.9,8.4h7.8z"/>
-              <path class="ib-cls-2" d="M73.6,50h.7v13h8.2v.6h-8.9v-13.6z"/>
-              <path class="ib-cls-2" d="M92.7,61.6l.4-.5c1.4,1.4,3,2.1,5,2.1,2.4,0,3.9-1.3,3.9-3h0c0-1.6-.9-2.5-4.2-3.1-3.3-.7-4.6-1.7-4.6-3.7h0c0-2,1.8-3.5,4.4-3.5,1.9,0,3.3.6,4.6,1.6l-.4.5c-1.2-1-2.7-1.5-4.3-1.5-2.2,0-3.7,1.3-3.7,2.9h0c0,1.6.9,2.5,4.2,3.1,3.4.7,4.6,1.8,4.6,3.7h0c0,2.1-1.8,3.7-4.6,3.7-1.9-.1-3.7-.8-5.3-2.3z"/>
-              <path class="ib-cls-2" d="M107.4,50h9.6v.6h-8.9v5.9h8.1v.6h-8.1v6h9v.6h-9.7v-13.7z"/>
-              <path class="ib-cls-2" d="M127,49.9h.6l6.5,13.7h-.7l-1.9-4h-8.4l-1.9,4h-.7l6.5-13.7zM131.2,59l-3.9-8.4-3.9,8.4h7.8z"/>
-              <path class="ib-cls-2" d="M138.2,50h5.6c1.7,0,3.1.5,3.9,1.3.6.6,1,1.5,1,2.5h0c0,2.3-1.8,3.6-4.3,3.9l4.5,5.9h-.8l-4.4-5.8h-4.8v5.8h-.7v-13.6zM143.7,57.2c2.8,0,4.4-1.4,4.4-3.3h0c0-2-1.6-3.3-4.3-3.3h-4.9v6.6h4.8z"/>
-              <path class="ib-cls-2" d="M152.9,56.8h0c0-3.9,2.9-7.1,6.7-7.1,2.5,0,3.9.9,5.2,2.2l-.5.5c-1.1-1.1-2.5-2-4.8-2-3.5,0-6,2.9-6,6.4h0c0,3.5,2.6,6.4,6.1,6.4,2.1,0,3.6-.9,4.9-2.2l.5.5c-1.3,1.3-2.9,2.3-5.4,2.3-3.8.1-6.7-3.1-6.7-7z"/>
-              <path class="ib-cls-2" d="M169.1,50h.7v6.5h9.3v-6.5h.7v13.6h-.7v-6.6h-9.3v6.6h-.7v-13.6z"/>
-              <path class="ib-cls-2" d="M195.7,50.6h-4.9v-.6h10.4v.6h-4.9v13h-.7v-13z"/>
-              <path class="ib-cls-2" d="M205.4,50h.7v6.5h9.3v-6.5h.7v13.6h-.7v-6.6h-9.4v6.6h-.7v-13.6z"/>
-              <path class="ib-cls-2" d="M226.6,49.9h.6l6.5,13.7h-.7l-1.9-4h-8.4l-1.9,4h-.7l6.5-13.7zM230.9,59l-3.9-8.4-4,8.4h7.9z"/>
-              <path class="ib-cls-2" d="M239.7,50.6h-4.9v-.6h10.4v.6h-4.9v13h-.7v-13z"/>
-              <path class="ib-cls-2" d="M255.2,50h.7l4.3,12.7,4.1-12.7h.5l4.1,12.8,4.3-12.7h.7l-4.7,13.7h-.5l-4.1-12.5-4.1,12.5h-.5l-4.8-13.8z"/>
-              <path class="ib-cls-2" d="M276.8,56.8h0c0-3.8,2.7-7.1,6.8-7.1s6.8,3.3,6.8,7h0c0,3.7-2.7,7-6.8,7s-6.8-3.1-6.8-6.9zM289.8,56.9h0c0-3.5-2.5-6.5-6.1-6.5s-6.1,3-6.1,6.4h0c0,3.5,2.5,6.5,6.2,6.5s6-3,6-6.4z"/>
-              <path class="ib-cls-2" d="M295.3,50h5.6c1.7,0,3.1.5,3.9,1.3.6.6,1,1.5,1,2.5h0c0,2.3-1.8,3.6-4.3,3.9l4.5,5.9h-.8l-4.4-5.8h-4.8v5.8h-.7v-13.6zM300.7,57.2c2.8,0,4.4-1.4,4.4-3.3h0c0-2-1.6-3.3-4.3-3.3h-4.9v6.6h4.8z"/>
-              <path class="ib-cls-2" d="M310.7,50h.7v9.1l9.1-9.1h.9l-5.9,5.9,6.2,7.8h-.9l-5.8-7.3-3.6,3.6v3.7h-.7v-13.7z"/>
-              <path class="ib-cls-2" d="M324.8,61.6l.5-.5c1.4,1.4,3,2.1,5,2.1,2.4,0,3.9-1.3,3.9-3h0c0-1.6-.9-2.5-4.2-3.1-3.3-.7-4.6-1.7-4.6-3.7h0c0-2,1.9-3.5,4.4-3.5,1.9,0,3.4.6,4.6,1.6l-.4.5c-1.2-1-2.7-1.5-4.3-1.5-2.2,0-3.7,1.3-3.7,2.9h0c0,1.6.9,2.5,4.2,3.1,3.4.7,4.6,1.8,4.6,3.7h0c0,2.1-1.8,3.7-4.6,3.7-2.1-.1-3.8-.8-5.4-2.3z"/>
-            </g>
-            <path class="ib-cls-2" d="M147.9,24.5c0,8.9-4.8,13.4-12.2,13.4s-12.5-5-12.5-13.7V3h-2.7v21.5c0,10.3,6.3,15.9,15.1,15.9s15.1-5.6,15.1-16.2V3h-2.7l-.1,21.5z"/>
-            <polygon class="ib-cls-2" points="184.1 35 158.7 3 156.2 3 156.2 39.8 158.8 39.8 158.8 7.1 184.7 39.8 186.8 39.8 186.8 3 184.1 3 184.1 35"/>
-            <path class="ib-cls-2" d="M204.5,3h-12.2v36.8h12.2c11.6,0,19.6-8,19.6-18.4v-.1c0-10.3-8-18.3-19.6-18.3zM221.2,21.5c0,8.8-6.5,15.8-16.7,15.8h-9.5V5.5h9.5c10.2,0,16.7,7.2,16.7,15.9v.1z"/>
-            <path class="ib-cls-2" d="M65.6,20.9c3-1.2,6.3-3.7,6.3-8.7v-.1c0-5.5-4.8-9-11.9-9h-15.3v36.8h16c7.9,0,13.2-3.9,13.2-10v-.1c0-5.2-3.9-7.8-8.3-8.9zM47.4,5.5h12.4c5.9,0,9.2,2.7,9.2,6.8v.1c0,4.9-3.9,7.6-9.5,7.6h-12.1V5.5zM71.1,29.8c0,4.6-4,7.5-10.3,7.5h-13.4v-14.8h12.5c7.2,0,11.2,2.6,11.2,7.1v.2z"/>
-            <rect class="ib-cls-2" x="0" y="3" width="2.7" height="36.8"/>
-            <polygon class="ib-cls-2" points="36.4 35 11 3 8.4 3 8.4 39.8 11 39.8 11 7.1 37 39.8 39 39.8 39 3 36.4 3 36.4 35"/>
-            <g>
-              <path class="ib-cls-2" d="M96.4,0c-11.6,0-20.9,9.4-20.9,20.9s9.4,20.9,20.9,20.9c1.5,0,3-.2,4.4-.5-.1-.1-.1-.2-.2-.3l-.9-2.8c-.7.7-1.5,1.1-2.3,1.3v-8.8l-.6-1.9-.8-2.7-.7-2.3v4.5c-2.4,0-4.8.2-7,.6-.5-2.1-.8-4.5-.9-6.9h7.3l-.2-.6c-.2-.5-.1-1,.1-1.5h-7.2c.1-2.5.4-4.8.9-6.9,2.2.3,4.6.5,7,.6v5.4c.4-.3.8-.4,1.2-.4.3,0,.6.1.9.2v-5.4c2.4,0,4.8-.2,7-.6.5,2.1.8,4.5.9,6.9h-6.2l1.4.9,2.1,1.3h2.7c0,.5,0,1-.1,1.5l.6.4,1.4.9c.1-.9.2-1.8.2-2.8h7.6c-.1,2.3-.7,4.5-1.6,6.5l.1.1,1.6,1s.1,0,.1.1c1.2-2.6,1.9-5.6,1.9-8.7.1-11.6-9.2-20.9-20.7-20.9zM80.5,10.9c1.6.7,3.5,1.2,5.6,1.6-.5,2.2-.8,4.7-.9,7.3h-7.6c.2-3.3,1.3-6.3,2.9-8.9zM80.5,30.9c-1.7-2.6-2.7-5.7-2.9-9h7.6c.1,2.6.4,5.1.9,7.3-2.1.5-4,1.1-5.6,1.7zM95.3,30.5v9c-2.7-.7-5-3.9-6.4-8.5,2-.3,4.2-.5,6.4-.5zM90.4,38.7c-3.4-1.1-6.4-3.2-8.6-6,1.4-.5,3.1-1,4.8-1.4,1,3,2.3,5.6,3.8,7.4zM86.7,10.4c-1.8-.4-3.4-.8-4.8-1.4,2.2-2.7,5.2-4.8,8.6-6-1.6,1.9-2.9,4.4-3.8,7.4zM95.3,11.3c-2.2,0-4.4-.2-6.4-.5,1.4-4.6,3.8-7.8,6.4-8.5v9zM97.4,11.3V2.3c2.7.7,5,3.9,6.4,8.5-2,.3-4.2.4-6.4.5zM102.3,3.1c3.4,1.1,6.4,3.2,8.6,6-1.4.5-3,1-4.8,1.4-1-3.1-2.3-5.6-3.8-7.4zM107.5,19.8c-.1-2.6-.4-5.1-.9-7.3,2.1-.4,4-1,5.6-1.6,1.7,2.6,2.7,5.7,2.9,8.9h-7.6z"/>
-              <path class="ib-cls-3" d="M114.4,30.8l-1.6-1-5.7-3.4-2-1.2-5.3-3.2-2.9-1.8c-.1-.1-.2-.1-.3-.1-.4,0-.7.4-.6.8l1.5,4.8.8,2.7.7,2.2,2,6.4,1.1,3.6c.1.2.2.3.4.4h.2c.2,0,.3-.1.4-.2l.1-.1,2.1-4,2.4,3c.1.2.3.2.5.2.1,0,.3,0,.4-.1l3.3-2.7c.3-.2.3-.6.1-.9l-2.4-3,4.3-1.1h.1l.2-.1c.4-.1.6-.6.3-.9c0-.2,0-.3-.1-.3z"/>
-            </g>
-          </g>
-        </g>
-      </svg>
+<div style="background:var(--charcoal);padding:1.5rem 3rem">
+  <div style="max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div style="text-align:center;flex:1;min-width:120px">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--white)">2,000+</div>
+      <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Active Clients</div>
     </div>
-
-    <!-- Stats -->
-    <div style="flex:1;display:flex;align-items:stretch">
-
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);gap:0.2rem">
-        <div style="width:24px;height:2px;background:var(--maroon);border-radius:2px;margin-bottom:0.35rem"></div>
-        <div style="font-size:1.55rem;font-weight:900;color:var(--white);letter-spacing:-0.02em;line-height:1">2,000+</div>
-        <div style="font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em">Active Clients</div>
-      </div>
-
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);gap:0.2rem">
-        <div style="width:24px;height:2px;background:var(--maroon);border-radius:2px;margin-bottom:0.35rem"></div>
-        <div style="font-size:1.55rem;font-weight:900;color:var(--white);letter-spacing:-0.02em;line-height:1">$1B+</div>
-        <div style="font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em">Revenue Generated</div>
-      </div>
-
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);gap:0.2rem;background:rgba(123,24,24,0.12)">
-        <div style="width:24px;height:2px;background:var(--maroon-light);border-radius:2px;margin-bottom:0.35rem"></div>
-        <div style="font-size:1.55rem;font-weight:900;color:var(--white);letter-spacing:-0.02em;line-height:1">3.55x</div>
-        <div style="font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em">Avg. Client ROI</div>
-      </div>
-
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);gap:0.2rem">
-        <div style="width:24px;height:2px;background:var(--maroon);border-radius:2px;margin-bottom:0.35rem"></div>
-        <div style="font-size:1.55rem;font-weight:900;color:var(--white);letter-spacing:-0.02em;line-height:1">200+</div>
-        <div style="font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em">Industry Awards</div>
-      </div>
-
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);gap:0.2rem">
-        <div style="width:24px;height:2px;background:var(--maroon);border-radius:2px;margin-bottom:0.35rem"></div>
-        <div style="font-size:1.55rem;font-weight:900;color:var(--white);letter-spacing:-0.02em;line-height:1">Inc. 5000</div>
-        <div style="font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em">10&times; Honoree</div>
-      </div>
-
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.6rem 1rem;gap:0.2rem">
-        <div style="width:24px;height:2px;background:var(--maroon);border-radius:2px;margin-bottom:0.35rem"></div>
-        <div style="font-size:1.55rem;font-weight:900;color:var(--white);letter-spacing:-0.02em;line-height:1">100K+</div>
-        <div style="font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em">Appointments / Year</div>
-      </div>
-
+    <div style="text-align:center;flex:1;min-width:120px">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--white)">$1B+</div>
+      <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Revenue Generated</div>
+    </div>
+    <div style="text-align:center;flex:1;min-width:120px">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--white)">3.55x</div>
+      <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Avg. ROI</div>
+    </div>
+    <div style="text-align:center;flex:1;min-width:120px">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--white)">200+</div>
+      <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Awards</div>
+    </div>
+    <div style="text-align:center;flex:1;min-width:120px">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--white)">Inc. 5000</div>
+      <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">10x Honoree</div>
+    </div>
+    <div style="text-align:center;flex:1;min-width:120px">
+      <div style="font-size:1.4rem;font-weight:800;color:var(--white)">100K+</div>
+      <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Appointments / Year</div>
     </div>
   </div>
 </div>
@@ -570,20 +511,20 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
   <div class="score-layout" style="display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start">
     <div class="card" style="text-align:center;padding:2rem">
       <div style="position:relative;width:180px;height:180px;margin:0 auto 1rem">
-        <!-- Score = 35 | Circumference ≈ 327 | dashoffset = 327 × 0.65 = 213 -->
+        <!-- Score = 42 | Circumference ≈ 327 | dashoffset = 327 × 0.58 = 190 -->
         <svg viewBox="0 0 120 120" style="transform:rotate(-90deg)">
           <circle cx="60" cy="60" r="52" fill="none" stroke="#E5E0DB" stroke-width="10"/>
-          <circle cx="60" cy="60" r="52" fill="none" stroke="#C41E1E" stroke-width="10"
-                  stroke-dasharray="327" stroke-dashoffset="213" stroke-linecap="round"/>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#D4920A" stroke-width="10"
+                  stroke-dasharray="327" stroke-dashoffset="190" stroke-linecap="round"/>
         </svg>
         <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
-          <div style="font-size:3rem;font-weight:900;color:var(--red);line-height:1">35</div>
+          <div style="font-size:3rem;font-weight:900;color:var(--amber);line-height:1">42</div>
           <div style="font-size:0.75rem;color:var(--muted);font-weight:600">out of 100</div>
         </div>
       </div>
-      <div style="font-size:1.1rem;font-weight:800;color:var(--red)">CRITICAL &mdash; MAJOR GAPS</div>
+      <div style="font-size:1.1rem;font-weight:800;color:var(--amber)">IMPROVING &mdash; FOUNDATION BUILT</div>
       <div style="font-size:0.75rem;color:var(--muted);margin-top:0.25rem">
-        Great product. Zero discoverability<br>for the buyers who don&rsquo;t already know the name.
+        Technical foundation remediated.<br>Content &amp; visibility gaps remain the priority.
       </div>
     </div>
 
@@ -593,11 +534,11 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
           <div>
             <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)">Site Health</div>
-            <div style="font-size:0.82rem;color:var(--text);margin-top:0.15rem">81 broken links &middot; 792 JS/CSS issues</div>
+            <div style="font-size:0.82rem;color:var(--text);margin-top:0.15rem">85% Semrush health &middot; 0 broken links &uarr; from 74%</div>
           </div>
-          <div style="font-size:1.6rem;font-weight:800;color:var(--amber)">55<span style="font-size:0.8rem;color:var(--muted)">/100 <em style="font-size:0.65rem">Est.</em></span></div>
+          <div style="font-size:1.6rem;font-weight:800;color:var(--green)">80<span style="font-size:0.8rem;color:var(--muted)">/100</span></div>
         </div>
-        <div class="progress-bar"><div class="fill" style="width:55%;background:var(--amber)"></div></div>
+        <div class="progress-bar"><div class="fill" style="width:80%;background:var(--green)"></div></div>
       </div>
 
       <div class="card" style="padding:1rem 1.25rem">
@@ -659,11 +600,11 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
           <div>
             <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)">Security &amp; Technical</div>
-            <div style="font-size:0.82rem;color:var(--text);margin-top:0.15rem">HTTPS &check; &middot; No schema &middot; llms.txt absent</div>
+            <div style="font-size:0.82rem;color:var(--text);margin-top:0.15rem">PHP 8.0 &check; &middot; HTTPS &check; &middot; No schema markup</div>
           </div>
-          <div style="font-size:1.6rem;font-weight:800;color:var(--amber)">50<span style="font-size:0.8rem;color:var(--muted)">/100</span></div>
+          <div style="font-size:1.6rem;font-weight:800;color:var(--amber)">65<span style="font-size:0.8rem;color:var(--muted)">/100</span></div>
         </div>
-        <div class="progress-bar"><div class="fill" style="width:50%;background:var(--amber)"></div></div>
+        <div class="progress-bar"><div class="fill" style="width:65%;background:var(--amber)"></div></div>
       </div>
 
       <div class="card" style="padding:1rem 1.25rem">
@@ -709,9 +650,9 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
       <div class="stat-sub">Est. &middot; heavy JS/CSS stack detected</div>
     </div>
     <div class="card">
-      <div class="card-label"><span class="dot amber"></span> Pages in Sitemap</div>
-      <div class="big-stat warning">400+</div>
-      <div class="stat-sub">149 orphaned; 208 buried 3+ clicks deep</div>
+      <div class="card-label"><span class="dot green"></span> Crawled URLs</div>
+      <div class="big-stat success" style="font-size:2rem">88</div>
+      <div class="stat-sub">Down from 363 &middot; lean, indexable footprint</div>
     </div>
     <div class="card">
       <div class="card-label"><span class="dot amber"></span> GTmetrix Grade</div>
@@ -725,47 +666,110 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
     </div>
   </div>
 
-  <div class="card-grid cols-2">
+  <!-- Project Recap Block -->
+  <div style="background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);border-radius:10px;padding:1.75rem 2rem;margin-bottom:1.25rem;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(43,212,196,0.2);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-40px;right:80px;width:140px;height:140px;border-radius:50%;border:1px solid rgba(255,90,60,0.2);pointer-events:none"></div>
+
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+      <div>
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--coral);margin-bottom:0.35rem">5-Hour Technical Project — July 2026</div>
+        <div style="font-size:1.3rem;font-weight:800;color:var(--white);line-height:1.2">Site Health Remediation Complete</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.55);margin-top:0.25rem">Targeted technical work delivered an 11-point site health improvement and eliminated the structural crawl blockers.</div>
+      </div>
+      <div style="display:flex;gap:1.5rem;flex-shrink:0">
+        <div style="text-align:center">
+          <div style="font-size:2.2rem;font-weight:900;color:var(--aqua);line-height:1">74%</div>
+          <div style="font-size:0.62rem;color:rgba(255,255,255,0.45);margin-top:0.1rem;letter-spacing:0.05em">BEFORE</div>
+        </div>
+        <div style="display:flex;align-items:center;font-size:1.5rem;color:rgba(255,255,255,0.3)">&rarr;</div>
+        <div style="text-align:center">
+          <div style="font-size:2.2rem;font-weight:900;color:var(--aqua);line-height:1">85%</div>
+          <div style="font-size:0.62rem;color:rgba(255,255,255,0.45);margin-top:0.1rem;letter-spacing:0.05em">AFTER</div>
+        </div>
+        <div style="display:flex;align-items:center;padding:0 0.5rem">
+          <div style="background:rgba(43,212,196,0.12);border:1px solid rgba(43,212,196,0.35);border-radius:6px;padding:0.35rem 0.65rem;text-align:center">
+            <div style="font-size:1.4rem;font-weight:900;color:var(--aqua)">+11</div>
+            <div style="font-size:0.6rem;color:rgba(255,255,255,0.45);letter-spacing:0.05em">pts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.65rem;margin-top:1.25rem">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:0.75rem 0.85rem">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem">Redirect Chains &amp; Slug Conflicts</div>
+        <div style="font-size:0.82rem;color:var(--white)">Drafted pages reserving live slugs fixed. Redirection plugin disabled, tables corrected, then re-enabled — live URLs now match sitemap.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:0.75rem 0.85rem">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem">404 Errors &amp; Broken Internal Links</div>
+        <div style="font-size:0.82rem;color:var(--white)">Redirect table audited end-to-end; reversed source/destination entries corrected. <strong style="color:var(--aqua)">131 broken internal links</strong> resolved in a single pass.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:0.75rem 0.85rem">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem">Broken Images &amp; Legacy Elements</div>
+        <div style="font-size:0.82rem;color:var(--white)">Remnant Elementor elements hidden from crawlers where possible. 1 flag on the Integrations page is a known false positive — requires a page rebuild.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:0.75rem 0.85rem">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem">Plugin Conflicts Removed</div>
+        <div style="font-size:0.82rem;color:var(--white)">XML Sitemap Generator removed (duplicate of Yoast). A redirect ensures the sitemap URL resolves correctly. Reduces conflict risk site-wide.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:0.75rem 0.85rem">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.35rem">PHP Updated to 8.0</div>
+        <div style="font-size:0.82rem;color:var(--white)">Site environment updated from an outdated PHP version to PHP 8.0 — improved stability, modern plugin compatibility, and reduced security vulnerabilities.</div>
+      </div>
+      <div style="background:rgba(43,212,196,0.08);border:1px solid rgba(43,212,196,0.3);border-radius:7px;padding:0.75rem 0.85rem">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--aqua);margin-bottom:0.35rem">Net Result</div>
+        <div style="font-size:0.82rem;color:var(--white)">Bot-accessible URLs: <strong style="color:var(--aqua)">363 &rarr; 88</strong>. Search engines now spend crawl budget on healthy, indexable pages — a direct SEO performance driver going forward.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid cols-2" style="margin-bottom:1rem">
     <div class="card">
-      <div class="card-label"><span class="dot red"></span> Top Issues &nbsp;<span class="badge red">5 errors</span>&nbsp;<span class="badge amber">1,200+ warnings</span></div>
-      <div class="issue-item"><div class="issue-icon error">!</div><div><strong>81 broken internal links</strong> &mdash; users and crawlers hit dead ends throughout the site</div></div>
-      <div class="issue-item"><div class="issue-icon error">!</div><div><strong>20 incorrect pages in sitemap.xml</strong> &mdash; redirected or non-200 URLs waste crawl budget</div></div>
-      <div class="issue-item"><div class="issue-icon error">!</div><div><strong>7 broken internal images</strong> &mdash; pages render with missing visuals; trust and quality signals drop</div></div>
-      <div class="issue-item"><div class="issue-icon error">!</div><div><strong>4 redirect chains and loops</strong> &mdash; slow load, confused indexing, lost link equity</div></div>
-      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>792 unminified JS/CSS files</strong> &mdash; the single largest load-time drag on the site</div></div>
-      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>137 pages with duplicate H1 and title tags</strong> &mdash; keyword signal is diluted across nearly every page</div></div>
-      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>108 images missing alt attributes</strong> &mdash; invisible to image search; accessibility failure</div></div>
-      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>39 pages have no meta description</strong> &mdash; Google writes its own; click-through rates suffer</div></div>
-      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>llms.txt not found</strong> &mdash; AI engines receive no structured guidance about magnustech.com</div></div>
+      <div class="card-label"><span class="dot green"></span> Remediation Complete &nbsp;<span class="badge green">4 errors resolved</span>&nbsp;<span class="badge amber">1 error open</span></div>
+
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin:0.5rem 0 0.35rem">&#10003; Resolved in 5-Hour Project</div>
+      <div class="issue-item" style="opacity:0.65"><div class="issue-icon" style="background:var(--green);border-color:var(--green)">&#10003;</div><div><strong style="text-decoration:line-through">81 broken internal links</strong> &mdash; redirect table audited; 131 broken links cleared; crawl footprint 363 &rarr; 88 URLs</div></div>
+      <div class="issue-item" style="opacity:0.65"><div class="issue-icon" style="background:var(--green);border-color:var(--green)">&#10003;</div><div><strong style="text-decoration:line-through">Sitemap slug conflicts &amp; incorrect URLs</strong> &mdash; drafted page slugs corrected; live sitemap now accurate</div></div>
+      <div class="issue-item" style="opacity:0.65"><div class="issue-icon" style="background:var(--green);border-color:var(--green)">&#10003;</div><div><strong style="text-decoration:line-through">4 redirect chains and loops</strong> &mdash; source/destination reversed redirects corrected throughout</div></div>
+      <div class="issue-item" style="opacity:0.65"><div class="issue-icon" style="background:var(--green);border-color:var(--green)">&#10003;</div><div><strong style="text-decoration:line-through">Outdated PHP version</strong> &mdash; updated to PHP 8.0; improved stability, compatibility, and security</div></div>
+      <div class="issue-item" style="opacity:0.65"><div class="issue-icon" style="background:var(--green);border-color:var(--green)">&#10003;</div><div><strong style="text-decoration:line-through">Conflicting plugins</strong> &mdash; XML Sitemap Generator removed (duplicate of Yoast); sitemap redirect added</div></div>
+
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin:0.75rem 0 0.35rem">&#9888; Remaining Open Items</div>
+      <div class="issue-item"><div class="issue-icon error">!</div><div><strong>1 broken internal image (Integrations page)</strong> &mdash; known false positive; element loads on user interaction but flags in crawl &mdash; full page rebuild required</div></div>
+      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>791 unminified JS/CSS files</strong> &mdash; largest single load-time drag on the site; dev-level intervention needed</div></div>
+      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>37 pages missing meta descriptions</strong> &mdash; Google writes its own; click-through rates suffer</div></div>
+      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>108 images missing alt attributes</strong> &mdash; invisible to image search; accessibility gap</div></div>
+      <div class="issue-item"><div class="issue-icon warn">!</div><div><strong>23 pages with multiple H1 tags</strong> &mdash; keyword signal diluted; on-page structure issue</div></div>
     </div>
     <div class="card">
-      <div class="card-label"><span class="dot amber"></span> Semrush Site Health &mdash; Detail</div>
-      <p style="font-size:0.85rem;color:var(--text);margin-bottom:1rem">The site audit uncovered <strong>115 crawl errors</strong> and over <strong>1,200 warnings</strong> across the magnustech.com domain. The most damaging are structural: 81 broken internal links mean both buyers and Google bots are regularly led to dead ends.</p>
+      <div class="card-label"><span class="dot green"></span> Semrush Site Health &mdash; 74% &rarr; 85% &uarr;</div>
+      <p style="font-size:0.85rem;color:var(--text);margin-bottom:1rem">A 5-hour technical remediation project completed in July 2026 resolved the most damaging structural issues — bringing Semrush site health from <strong>74% to 85%</strong> and reducing the crawlable URL count from 363 to 88. The items below show what was cleared and what still needs attention.</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.5rem">
-        <div style="background:var(--red-light);border-radius:6px;padding:0.65rem 0.75rem">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--red)">81</div>
-          <div style="font-size:0.7rem;color:var(--muted)">Broken Internal Links</div>
+        <div style="background:var(--green-light);border-radius:6px;padding:0.65rem 0.75rem;border:1px solid var(--green)">
+          <div style="font-size:1.5rem;font-weight:800;color:var(--green)">0</div>
+          <div style="font-size:0.7rem;color:var(--muted)">Broken Internal Links <span style="color:var(--green)">(was 81)</span></div>
         </div>
-        <div style="background:var(--red-light);border-radius:6px;padding:0.65rem 0.75rem">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--red)">20</div>
-          <div style="font-size:0.7rem;color:var(--muted)">Bad Sitemap Entries</div>
+        <div style="background:var(--green-light);border-radius:6px;padding:0.65rem 0.75rem;border:1px solid var(--green)">
+          <div style="font-size:1.5rem;font-weight:800;color:var(--green)">88</div>
+          <div style="font-size:0.7rem;color:var(--muted)">Crawled URLs <span style="color:var(--green)">(was 363)</span></div>
         </div>
         <div style="background:var(--amber-light);border-radius:6px;padding:0.65rem 0.75rem">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">792</div>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">791</div>
           <div style="font-size:0.7rem;color:var(--muted)">Unminified JS/CSS Files</div>
         </div>
         <div style="background:var(--amber-light);border-radius:6px;padding:0.65rem 0.75rem">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">208</div>
-          <div style="font-size:0.7rem;color:var(--muted)">Pages 3+ Clicks Deep</div>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">37</div>
+          <div style="font-size:0.7rem;color:var(--muted)">Pages Missing Meta Desc.</div>
         </div>
         <div style="background:var(--amber-light);border-radius:6px;padding:0.65rem 0.75rem">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">149</div>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">20</div>
           <div style="font-size:0.7rem;color:var(--muted)">Orphaned Sitemap Pages</div>
         </div>
         <div style="background:var(--amber-light);border-radius:6px;padding:0.65rem 0.75rem">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">132</div>
-          <div style="font-size:0.7rem;color:var(--muted)">Low Text-to-HTML Ratio</div>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--amber)">108</div>
+          <div style="font-size:0.7rem;color:var(--muted)">Images Missing Alt Text</div>
         </div>
       </div>
     </div>
@@ -794,7 +798,7 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
     </div>
     <div class="card">
       <div class="card-label"><span class="dot amber"></span> Authority Score</div>
-      <div class="big-stat warning">22 <span style="font-size:0.9rem;color:var(--muted)">Est.</span></div>
+      <div class="big-stat warning">24</div>
       <div class="stat-sub">514 backlinks &middot; 194 referring domains &middot; 139 referring IPs</div>
     </div>
   </div>
@@ -1038,7 +1042,7 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
     <table style="margin-bottom:0.75rem">
       <thead><tr><th>Domain</th><th>Est. AS</th><th>Est. Traffic/mo</th><th>Keywords</th><th>Backlinks</th><th>Ref. Domains</th><th>Share%</th></tr></thead>
       <tbody>
-        <tr class="highlight"><td><strong>magnustech.com (CLIENT)</strong></td><td>22</td><td>1,000</td><td>283</td><td>514</td><td>194</td><td>75.8%</td></tr>
+        <tr class="highlight"><td><strong>magnustech.com (CLIENT)</strong></td><td>24</td><td>1,000</td><td>283</td><td>514</td><td>194</td><td>75.8%</td></tr>
         <tr><td>magnustechnol.com</td><td>12</td><td>180</td><td>89</td><td>120</td><td>65</td><td>13.6%</td></tr>
         <tr><td>vtvsolutions.com</td><td>15</td><td>85</td><td>49</td><td>95</td><td>45</td><td>6.4%</td></tr>
         <tr><td>magnusmode.com</td><td>8</td><td>35</td><td>26</td><td>45</td><td>25</td><td>2.7%</td></tr>
@@ -1122,21 +1126,20 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
 
     <div class="plan-card">
       <div class="plan-card-header">
-        <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;color:white;flex-shrink:0">1</div>
+        <span class="step">01</span>
         <span class="step-title">New Website</span>
       </div>
       <div class="plan-card-body">
-        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">The current site has 81 broken internal links, 792 unminified resources, and 137 pages with duplicate H1/title tags. None of the solution pages target TMS buyer search terms. It&rsquo;s a product brochure, not a demand-generation machine.</p>
-        <h4>What we build</h4>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">The current site has 81 broken internal links, 792 unminified resources degrading load time, and 137 pages with duplicate H1/title tags. None of the existing solution pages are built around TMS buyer search terms. The site is a product brochure, not a demand-generation machine.</p>
+        <h4>What Abstrakt builds</h4>
         <ul>
           <li>SEO-first WordPress architecture &mdash; every page built around a target TMS keyword</li>
-          <li>30+ pages: TMS for carriers, brokers, 3PL, private fleet, driver app, EDI integration, load planning, pricing, case studies</li>
+          <li>30+ pages: Magnus TMS, TMS for carriers, TMS for brokers, TMS for 3PL, TMS for private fleet, finished vehicle, driver app, load planning, real-time tracking, EDI integration, integrations, pricing, case studies</li>
           <li>2,000+ words of optimized content per core solution page</li>
-          <li>Blog on main domain &mdash; replaces the underperforming marketing subdomain</li>
+          <li>Blog infrastructure on main domain (replacing the underperforming marketing subdomain)</li>
           <li>SoftwareApplication + Organization schema markup</li>
           <li>Core Web Vitals compliance &mdash; eliminate the 792 unminified JS/CSS penalty</li>
-          <li>301 redirects from all existing URLs to preserve link equity</li>
-          <li>llms.txt deployed so AI engines accurately represent Magnus</li>
+          <li>301 redirects from all existing URLs to preserve earned link equity</li>
         </ul>
         <div class="callout">This is the foundational step. Nothing else works without it.</div>
       </div>
@@ -1144,21 +1147,28 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
 
     <div class="plan-card">
       <div class="plan-card-header">
-        <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;color:white;flex-shrink:0">2</div>
+        <span class="step">02</span>
         <span class="step-title">Organic SEO</span>
       </div>
       <div class="plan-card-body">
-        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">Magnus has an Authority Score of ~22, 283 keywords &mdash; none of them commercial TMS buyer terms &mdash; and non-branded traffic of 146 visits/month, declining. Four tracks run in parallel to close that gap.</p>
-        <h4>What we do</h4>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">Magnus has an Authority Score of 24. It ranks for 283 keywords, none of them commercial TMS buyer terms. The non-branded traffic is 146/month and declining. Three layers of SEO work close that gap.</p>
+        <h4>On-Page &amp; Technical</h4>
         <ul>
-          <li>Map every TMS buyer keyword to a dedicated page with conversion-focused CTAs</li>
-          <li>Fix 81 broken internal links, 20 bad sitemap entries, and 4 redirect chains</li>
-          <li>2,500+ words/month: &ldquo;transportation management software,&rdquo; &ldquo;TMS for carriers,&rdquo; &ldquo;private fleet TMS,&rdquo; &ldquo;trucking dispatch software&rdquo;</li>
-          <li>GBP optimization for Austin, TX &mdash; categories, services, attributes</li>
-          <li>Cylex NAP correction + 20+ new directory submissions (Bing, YP.com, Facebook, MapQuest + 15 more)</li>
+          <li>On-page SEO &mdash; every TMS buyer keyword mapped to a page and optimized CTA</li>
+          <li>Fix 81 broken internal links, correct 20 bad sitemap entries, resolve 4 redirect chains</li>
+          <li>2,500+ words/month targeting: &ldquo;transportation management software,&rdquo; &ldquo;TMS for carriers,&rdquo; &ldquo;private fleet TMS,&rdquo; &ldquo;trucking dispatch software,&rdquo; &ldquo;freight visibility platform&rdquo;</li>
+        </ul>
+        <h4 style="margin-top:0.75rem">Local SEO</h4>
+        <ul>
+          <li>GBP optimization for Austin, TX &mdash; categories, description, services, attributes</li>
+          <li>Correct Cylex NAP (fix wrong address: old Ranch Rd location)</li>
+          <li>20+ directory listing submissions: Bing, YP.com, YellowPagesDirectory, Facebook, MapQuest + 15 more</li>
           <li>Review generation program: 0 &rarr; 24+ verified GBP reviews over 12 months</li>
-          <li>llms.txt + content restructured for AI Overviews and featured snippet capture</li>
-          <li>AEO FAQ schema: &ldquo;best TMS for carriers,&rdquo; &ldquo;TMS vs. spreadsheets,&rdquo; competitive comparison queries</li>
+        </ul>
+        <h4 style="margin-top:0.75rem">AI SEO</h4>
+        <ul>
+          <li>Content restructured for AI Overviews and featured snippet capture</li>
+          <li>AEO content: FAQ schema targeting &ldquo;what is the best TMS for carriers&rdquo; and comparison queries</li>
         </ul>
         <div class="callout">Organic SEO takes 3&ndash;6 months to build momentum. Abstrakt clients average 3.55&times; ROI.</div>
       </div>
@@ -1166,12 +1176,13 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
 
     <div class="plan-card">
       <div class="plan-card-header">
-        <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;color:white;flex-shrink:0">3</div>
+        <span class="step">03</span>
         <span class="step-title">Paid Media</span>
       </div>
       <div class="plan-card-body">
-        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">Magnus runs paid search on 11 keywords ($192/mo) &mdash; almost entirely branded terms already owned organically. Competitors are paying $7&ndash;$12 CPC for TMS buying keywords. At Magnus&rsquo;s $50K average deal, a single closed conversion pays for months of campaign spend.</p>
-        <h4>High-intent TMS keywords</h4>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">Magnus already runs paid search (11 keywords, $192/mo traffic cost) &mdash; but almost entirely on branded terms it already owns organically. The real paid opportunity is TMS buyer keywords that competitors are paying $7&ndash;$12 CPC to win.</p>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">TMS software buyers are highly qualified. At Magnus&rsquo;s $50K average deal size, a single Google Ads conversion that closes pays for 2&ndash;4 months of campaign spend.</p>
+        <h4>High-Intent TMS Keywords</h4>
         <table style="margin-bottom:0.75rem">
           <thead><tr><th>Keyword</th><th>Vol</th><th>Est. CPC</th></tr></thead>
           <tbody>
@@ -1183,11 +1194,11 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
           </tbody>
         </table>
         <ul>
-          <li>Negative keyword strategy: exclude &ldquo;trinium&rdquo; and competitor brand terms Magnus already ranks for</li>
-          <li>Remarketing to visitors who viewed /solution/ or /driver-app/ pages</li>
+          <li>Negative keyword strategy: exclude &ldquo;trinium,&rdquo; competitor brand terms Magnus already ranks for</li>
+          <li>Remarketing to site visitors who viewed /solution/ or /driver-app/ pages</li>
           <li>LinkedIn ads targeting fleet managers and ops directors (50&ndash;1,000 employee fleets)</li>
         </ul>
-        <div class="callout">Geo-targeting: Texas (Austin, Dallas, Houston) + national campaigns for asset-based carriers in IL, OH, TN, NC logistics hubs.</div>
+        <div class="callout">Geo-targeting: Texas (Austin, Dallas, Houston metros) + national campaigns for asset-based carriers in IL, OH, TN, NC logistics hubs.</div>
       </div>
     </div>
 
@@ -1205,51 +1216,58 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
 
   <div class="card-grid cols-2" style="margin-bottom:1rem">
 
-    <div class="card" style="border:2px solid var(--maroon);position:relative;padding-top:2.5rem">
-      <div style="position:absolute;top:0;left:1.5rem;background:var(--maroon);color:var(--white);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.75rem;border-radius:0 0 6px 6px">Recommended</div>
+    <div class="card" style="border:2px solid var(--navy);position:relative;padding-top:2.5rem">
+      <div style="position:absolute;top:0;left:1.5rem;background:var(--navy);color:var(--white);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.75rem;border-radius:0 0 6px 6px">Recommended</div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem">
         <div>
-          <div style="font-size:1.3rem;font-weight:800;color:var(--charcoal)">SEO Content Program</div>
-          <div style="font-size:0.8rem;color:var(--muted)">Ongoing Optimization &middot; Content &middot; Local SEO</div>
+          <div style="font-size:1.3rem;font-weight:800;color:var(--charcoal)">SEO Content + Technical Optimization</div>
+          <div style="font-size:0.8rem;color:var(--muted)">Ongoing SEO content + continued technical improvements</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:1.8rem;font-weight:900;color:var(--maroon)">$2,250</div>
+          <div style="font-size:1.8rem;font-weight:900;color:var(--navy)">$2,250</div>
           <div style="font-size:0.72rem;color:var(--muted)">/month</div>
         </div>
       </div>
+
+      <div style="background:var(--green-light);border:1px solid var(--green);border-radius:6px;padding:0.65rem 0.75rem;margin-bottom:0.85rem;font-size:0.78rem;color:var(--text)">
+        <strong style="color:var(--green)">&#10003; Foundation already in place.</strong> The technical remediation project resolved the structural blockers. This program builds the organic visibility layer on top of that clean foundation.
+      </div>
+
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:1rem">
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> 10 hrs/mo ongoing optimization &amp; technical improvements</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> 3 SEO-focused content pieces/mo (up to 4,000 words)</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Commercial keyword targeting &amp; content strategy</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Internal linking &amp; site structure improvements</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Local SEO support</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Hosting</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Monthly site health monitoring</div>
-        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Reporting &amp; strategy reviews</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Admin access &amp; ongoing technical SEO</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> TMS buyer keyword architecture</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> 2,500+ words/month (TMS content engine)</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> On-page optimization (meta, H1s, alt text)</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> GBP optimization (Austin, TX)</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> SoftwareApplication + Org schema</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> AI SEO &amp; AEO content signals</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Monthly performance reporting</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> Complements your current agency&rsquo;s work</div>
+        <div style="font-size:0.8rem;padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--green);font-weight:700">&check;</span> No duplication &mdash; coordinated strategy</div>
       </div>
       <div style="background:var(--light-gray);border-radius:6px;padding:0.75rem;font-size:0.78rem;color:var(--text)">
-        Each month&rsquo;s content directly targets TMS buying terms Magnus currently ranks for zero &mdash; turning the existing site into a demand-generation asset without requiring a full rebuild to start.
+        The technical work already done proves the model works. This program extends that momentum into content and visibility &mdash; turning a clean, crawlable site into one that actively attracts TMS buyers.
       </div>
     </div>
 
     <div class="card">
-      <div style="font-size:1rem;font-weight:800;color:var(--charcoal);margin-bottom:1.25rem">Why This Fits Magnus Technologies</div>
+      <div style="font-size:1rem;font-weight:800;color:var(--charcoal);margin-bottom:1.25rem">Why This Is the Right Next Step</div>
 
       <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.25rem">
         <div>
-          <div style="font-size:0.85rem;font-weight:700;color:var(--maroon)">1. The funnel depends entirely on brand recognition</div>
-          <div style="font-size:0.82rem;color:var(--text)">86% of magnustech.com&rsquo;s 1,000 monthly visitors searched for &ldquo;Magnus Technologies&rdquo; specifically. Ian Byrd&rsquo;s 4 reps need pipeline from buyers who don&rsquo;t already know the name &mdash; and right now, organic search generates zero of them.</div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy)">1. The technical foundation is now solid &mdash; next is content</div>
+          <div style="font-size:0.82rem;color:var(--text)">The remediation project cleared 131 broken links, corrected redirect chains, updated PHP, and brought site health from 74% to 85%. What&rsquo;s left is no longer a crawl problem &mdash; it&rsquo;s a visibility problem. No content = no rankings for the TMS keywords buyers actually search.</div>
         </div>
         <div>
-          <div style="font-size:0.85rem;font-weight:700;color:var(--maroon)">2. Technical debt is bleeding performance every month</div>
-          <div style="font-size:0.82rem;color:var(--text)">81 broken internal links, 792 unminified JavaScript files, and 208 pages buried more than 3 clicks deep. The 10 monthly optimization hours in this program begin clearing that backlog immediately &mdash; faster load times and cleaner crawl paths directly improve rankings.</div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy)">2. The funnel still depends entirely on brand recognition</div>
+          <div style="font-size:0.82rem;color:var(--text)">86% of magnustech.com&rsquo;s 1,000 monthly visitors searched for &ldquo;Magnus Technologies&rdquo; specifically. Sara&rsquo;s and John&rsquo;s team needs pipeline from buyers who don&rsquo;t already know the name &mdash; and right now, organic search generates zero of them.</div>
         </div>
         <div>
-          <div style="font-size:0.85rem;font-weight:700;color:var(--maroon)">3. AI is actively confusing Magnus with other companies</div>
-          <div style="font-size:0.82rem;color:var(--text)">Semrush AI Visibility: 29/100. ChatGPT and Gemini responses about &ldquo;Magnus Technology Solutions&rdquo; hedge with &ldquo;there are several entities with similar names.&rdquo; As TMS buyers increasingly use AI to shortlist vendors, that ambiguity is a disqualifier.</div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy)">3. AI is still confusing Magnus with other companies</div>
+          <div style="font-size:0.82rem;color:var(--text)">Semrush AI Visibility: 29/100. ChatGPT and Gemini responses about &ldquo;Magnus Technology Solutions&rdquo; hedge with &ldquo;there are several entities with similar names.&rdquo; Structured content and schema markup fix this directly &mdash; both included in the program.</div>
         </div>
         <div>
-          <div style="font-size:0.85rem;font-weight:700;color:var(--maroon)">4. The math on organic TMS traffic is compelling</div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy)">4. The math on organic TMS traffic is compelling</div>
           <div style="font-size:0.82rem;color:var(--text)">&ldquo;Transportation management software&rdquo; alone drives 5,400 searches/month. At 2% visitor-to-demo conversion and Magnus&rsquo;s $50K deal size, top-5 organic ranking for that one keyword represents <strong>$270K/month in potential pipeline</strong> from a single search term.</div>
         </div>
       </div>
@@ -1262,13 +1280,120 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
           <div><span style="color:var(--muted)">Organic Traffic:</span></div>
           <div><strong>1,000/mo &rarr; 2,500+/mo</strong></div>
           <div><span style="color:var(--muted)">Authority Score:</span></div>
-          <div><strong>22 &rarr; 30+</strong></div>
+          <div><strong>24 &rarr; 30+</strong></div>
           <div><span style="color:var(--muted)">Google Reviews:</span></div>
           <div><strong>0 &rarr; 24+</strong></div>
         </div>
       </div>
     </div>
 
+  </div>
+
+  <!-- Cookie Consent Add-On -->
+  <div class="card" style="margin-top:1rem;border:1px dashed var(--navy);position:relative">
+    <div style="position:absolute;top:-1px;left:1.5rem;background:var(--navy-light);color:var(--white);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.2rem 0.65rem;border-radius:0 0 5px 5px">Program Add-On</div>
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:start;gap:2rem;padding-top:0.5rem">
+
+      <div>
+        <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.65rem">
+          <div style="font-size:1.05rem;font-weight:800;color:var(--charcoal)">Consent &amp; Cookie Management</div>
+          <span class="badge amber">GDPR + U.S. State Privacy</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:0.85rem">
+          <div style="background:var(--light-gray);border-radius:7px;padding:0.6rem 0.75rem">
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem">Setup &amp; Config</div>
+            <div style="font-size:0.8rem;color:var(--text)">Initial setup, configuration, and ongoing management of consent settings &amp; associated tags via Google Tag Manager &mdash; up to 10 disclosed tracking technologies.</div>
+          </div>
+          <div style="background:var(--light-gray);border-radius:7px;padding:0.6rem 0.75rem">
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem">Monthly Cookie Scanning</div>
+            <div style="font-size:0.8rem;color:var(--text)">Automated monthly scans to identify and categorize cookies and tracking technologies present on the site. Client input may be required for proprietary or unfamiliar technologies.</div>
+          </div>
+          <div style="background:var(--light-gray);border-radius:7px;padding:0.6rem 0.75rem">
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem">Policy Generation</div>
+            <div style="font-size:0.8rem;color:var(--text)">Access to standardized privacy and cookie policy generation tools via the consent platform. All generated policies should be reviewed by qualified legal counsel prior to publication.</div>
+          </div>
+        </div>
+
+        <div style="background:#FFF8E6;border:1px solid var(--amber);border-radius:6px;padding:0.55rem 0.75rem;font-size:0.76rem;color:var(--text)">
+          <strong style="color:var(--amber)">Scope Note:</strong> Service covers tracking technologies disclosed by the client. Abstrakt does not guarantee regulatory compliance and is not liable for issues arising from undisclosed or third-party-installed technologies. 12-month commitment through 12/31/2026.
+        </div>
+      </div>
+
+      <div style="text-align:right;flex-shrink:0;min-width:120px">
+        <div style="font-size:2rem;font-weight:900;color:var(--navy)">$150</div>
+        <div style="font-size:0.72rem;color:var(--muted)">/month</div>
+        <div style="margin-top:0.85rem;padding-top:0.85rem;border-top:1px solid var(--border)">
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem">Combined Total</div>
+          <div style="font-size:1.3rem;font-weight:900;color:var(--charcoal)">$2,400</div>
+          <div style="font-size:0.72rem;color:var(--muted)">/month</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Ongoing Optimizations Block -->
+  <div class="card" style="margin-top:1rem;background:var(--off-white)">
+    <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--navy);margin-bottom:0.85rem;border-bottom:2px solid var(--navy);padding-bottom:0.5rem;display:inline-block">From the Technical Audit &mdash; Ongoing Optimizations</div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem">
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:7px;padding:0.85rem 0.9rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem">
+          <div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:0.65rem;font-weight:800;color:#fff">01</span></div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--charcoal)">Monthly Maintenance</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.5">Recurring monthly cleanup: audit and correct URL structures, add permanent redirects to prevent chain formation, and clear unused media files and outdated draft pages.</div>
+        <div style="margin-top:0.5rem;font-size:0.68rem;font-weight:700;color:var(--green)">&#10003; Included in $2,250/mo program</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:7px;padding:0.85rem 0.9rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem">
+          <div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:0.65rem;font-weight:800;color:#fff">02</span></div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--charcoal)">Consent &amp; Privacy (CMP)</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.5">Implement a Consent Management Platform for GDPR and U.S. state privacy compliance. Also review HubSpot&rsquo;s privacy settings to confirm correct data collection and consent configurations are enabled.</div>
+        <div style="margin-top:0.5rem;font-size:0.68rem;font-weight:700;color:var(--green)">&#10003; Covered by $150/mo add-on</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:7px;padding:0.85rem 0.9rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem">
+          <div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:0.65rem;font-weight:800;color:#fff">03</span></div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--charcoal)">Site Code &amp; Legacy Audit</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.5">The site has accumulated code from previous builds. A thorough codebase audit is recommended &mdash; focusing on plugin/theme conflicts and unused elements. Depending on findings, a phased site rebuild may establish a cleaner long-term foundation.</div>
+        <div style="margin-top:0.5rem;font-size:0.68rem;font-weight:700;color:var(--amber)">&#9656; Future scope &mdash; advise with Sara</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:7px;padding:0.85rem 0.9rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem">
+          <div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:0.65rem;font-weight:800;color:#fff">04</span></div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--charcoal)">AI Visibility &amp; Content Depth</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.5">Build topical depth across key TMS subject areas with a strong internal linking structure. Pair with experience-driven content unique to Magnus &mdash; case studies, proprietary data, real client outcomes &mdash; the strongest signals for both Google and AI platforms.</div>
+        <div style="margin-top:0.5rem;font-size:0.68rem;font-weight:700;color:var(--green)">&#10003; Included in $2,250/mo program</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:7px;padding:0.85rem 0.9rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem">
+          <div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:0.65rem;font-weight:800;color:#fff">05</span></div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--charcoal)">Previewing Unpublished Pages</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.5">Before sharing draft pages, use Yoast SEO &rarr; Advanced &rarr; set <em>&ldquo;Allow Search Engines to show this content&rdquo;</em> to <strong>No</strong>. Combine with WordPress password protection for an added layer. Switch back to <strong>Yes</strong> before going live.</div>
+        <div style="margin-top:0.5rem;font-size:0.68rem;font-weight:700;color:var(--muted)">&#9656; Best practice tip &mdash; implement now</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:7px;padding:0.85rem 0.9rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem">
+          <div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:0.65rem;font-weight:800;color:#fff">06</span></div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--charcoal)">Ninja Forms &rarr; HubSpot Migration</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.5">Several pages still run Ninja Forms instead of direct HubSpot embeds. An SMTP error on the site is likely connected to this. Replacing Ninja Forms with HubSpot embeds will resolve the SMTP issue and streamline lead data flow directly into your CRM.</div>
+        <div style="margin-top:0.5rem;font-size:0.68rem;font-weight:700;color:var(--amber)">&#9656; Recommend in next sprint</div>
+      </div>
+
+    </div>
   </div>
 
   <div style="background:var(--charcoal);border-radius:10px;padding:2rem;margin-top:1rem">
@@ -1306,7 +1431,7 @@ table tr.highlight td { background: #FFF3F3; font-weight: 600; color: var(--maro
       <div class="amg-logo" style="width:140px;height:38px;margin:0 auto;opacity:0.5"></div>
     </div>
     <div style="font-size:0.75rem;color:rgba(255,255,255,0.35);letter-spacing:0.04em">
-      Prepared by Abstrakt Marketing Group &middot; June 2026 &middot; Confidential
+      Prepared by Abstrakt Marketing Group &middot; July 2026 &middot; Updated Post-Remediation
     </div>
   </div>
 </footer>
